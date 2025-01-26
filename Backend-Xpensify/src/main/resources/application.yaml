@@ -1,0 +1,20 @@
+server:
+  port: 8081
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  datasource:
+    url: jdbc:postgresql://dpg-cu4tlci3esus73ak4d80-a.oregon-postgres.render.com:5432/xpensify?user=pulina_thushan&password=TCPoXbhd2Qb5199sqBIBupkXkA0XNqjk
+    username: pulina_jthushan
+    password: TCPoXbhd2Qb5199sqBIBupkXkA0XNqjk
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
