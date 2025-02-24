@@ -19,11 +19,14 @@ public class MyUserDetailService implements UserDetailsService {
     @Override
     @CrossOrigin
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        //to loadUserByUsername we have to connect with the database so we have to use repo layer
         Users user = repo.findByUsername(username);
         if(user == null){
             System.out.println("User Not Found");
             throw new UsernameNotFoundException(("user not found"));
         }
+        //as userdetails is an interface so we have to look for a class that implements this
+        //to get username and passwords we need USers class so we pass user
         return new UserPrincipal(user);
     }
 }

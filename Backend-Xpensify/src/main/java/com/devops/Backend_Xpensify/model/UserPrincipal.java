@@ -8,6 +8,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+//In the terms of spring security UserPrincipal is called the user who is currently logging
 public class UserPrincipal implements UserDetails {
 
 

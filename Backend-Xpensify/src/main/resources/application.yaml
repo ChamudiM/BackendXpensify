@@ -6,9 +6,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://dpg-cu4tlci3esus73ak4d80-a.oregon-postgres.render.com:5432/xpensify?user=pulina_thushan&password=TCPoXbhd2Qb5199sqBIBupkXkA0XNqjk
-    username: pulina_jthushan
-    password: TCPoXbhd2Qb5199sqBIBupkXkA0XNqjk
+    url: jdbc:postgresql://dpg-cupio8popnds739576rg-a.oregon-postgres.render.com:5432/xpensify_txqh?user=xpensify_txqh_user&password=pkEuGaYhlXxodw3e34cgE5ebkK0vzCgm
+    username:  xpensify_txqh_user
+    password: pkEuGaYhlXxodw3e34cgE5ebkK0vzCgm
 
   jpa:
     hibernate:
