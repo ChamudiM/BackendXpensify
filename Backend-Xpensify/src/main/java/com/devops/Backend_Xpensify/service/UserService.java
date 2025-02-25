@@ -9,6 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 public class UserService {
@@ -24,9 +25,15 @@ public class UserService {
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
     public Users register(Users user){
-        user.setPassword(encoder.encode(user.getPassword()));
-        return repo.save(user);
+        // USing RestTemplate for temporary use until implement a service registry
+        String uri = "http://localhost:8080/add-user";
+        RestTemplate restTemplate = new RestTemplate();
 
+        user.setPassword(encoder.encode(user.getPassword()));
+
+        restTemplate.postForObject(uri, user, String.class);
+
+        return repo.save(user);
     }
 
     public String verify(Users user) {

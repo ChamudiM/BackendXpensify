@@ -34,7 +34,7 @@ public class SecurityConfig {
     //from now on this is the security filter chain of my project
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
-                .csrf(customizer -> customizer.disable()) //diisable csrf
+                .csrf(customizer -> customizer.disable()) //disable csrf
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("/auth/*").permitAll()
                         .anyRequest().authenticated() )
