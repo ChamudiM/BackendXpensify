@@ -15,6 +15,8 @@ public class Users {
     private int id;
     private String username;
 
+    public int getId(){ return this.id; }
+
     public void setPassword(String password) {
         this.password = password;
     }
