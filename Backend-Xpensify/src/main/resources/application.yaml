@@ -20,4 +20,4 @@ spring:
     show-sql: true
 
 app:
-  microservice-url: http://localhost:8083
+  authservice: http://localhost:8083

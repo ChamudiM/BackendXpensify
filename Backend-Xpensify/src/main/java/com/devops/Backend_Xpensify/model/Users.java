@@ -1,8 +1,6 @@
 package com.devops.Backend_Xpensify.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 

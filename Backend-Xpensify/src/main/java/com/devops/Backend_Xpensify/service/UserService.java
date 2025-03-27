@@ -10,19 +10,20 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 @Service
+@Transactional
 public class UserService {
     @Autowired
     private UserRepo repo;
 
     @Getter
-    @Value("${app.microservice-url}")
-    private String microserviceUrl;
+    @Value("${app.authservice}")
+    private String authserviceUrl;
 
     @Autowired
     AuthenticationManager authManager;
@@ -35,13 +36,16 @@ public class UserService {
     public Users register(Users user){
 
         user.setPassword(encoder.encode(user.getPassword()));
+        Users savedUser = repo.saveAndFlush(user);
+
+        System.out.println("User added: " + savedUser.getUsername() + " " + savedUser.getId());
 
         // Using RestTemplate for temporary use until implementing a service registry
-//        String uri = "${microserviceUrl}/add-user";
-//        RestTemplate restTemplate = new RestTemplate();
-//        restTemplate.postForObject(microserviceUrl, user, String.class);
+        String uri = authserviceUrl + "/add-user";
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.postForObject(uri, user, String.class);
 
-        return repo.save(user);
+        return savedUser;
     }
 
     public UserDTO verify(Users user) {
