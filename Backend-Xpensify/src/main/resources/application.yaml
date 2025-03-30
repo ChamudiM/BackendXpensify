@@ -20,4 +20,4 @@ spring:
     show-sql: true
 
 app:
-  authservice: http://localhost:8083
+  authservice: http://spring-boot-app:8083
