@@ -26,6 +26,7 @@ pipeline {
                 script {
                     echo "Building Docker image..."
                     bat """
+                    cd Backend-Xpensify
                     docker build -t %ImageRegistry%/devops_auth:latest .
                     """
                 }
