@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8082
   error:
     include-message: always
     include-binding-errors: always
@@ -18,3 +18,6 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+
+app:
+  authservice: http://spring-boot-app:8083

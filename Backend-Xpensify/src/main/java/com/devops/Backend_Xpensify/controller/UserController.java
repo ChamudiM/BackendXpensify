@@ -1,5 +1,6 @@
 package com.devops.Backend_Xpensify.controller;
 
+import com.devops.Backend_Xpensify.dto.UserDTO;
 import com.devops.Backend_Xpensify.model.Users;
 import com.devops.Backend_Xpensify.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class UserController {
     }
 
     @PostMapping("auth/login")
-    public String login(@RequestBody Users user){
+    public UserDTO login(@RequestBody Users user){
         return service.verify(user);
     }
 }

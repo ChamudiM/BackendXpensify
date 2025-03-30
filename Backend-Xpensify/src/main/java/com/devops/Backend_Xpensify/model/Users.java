@@ -1,8 +1,6 @@
 package com.devops.Backend_Xpensify.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 
@@ -14,6 +12,8 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String username;
+
+    public int getId(){ return this.id; }
 
     public void setPassword(String password) {
         this.password = password;
