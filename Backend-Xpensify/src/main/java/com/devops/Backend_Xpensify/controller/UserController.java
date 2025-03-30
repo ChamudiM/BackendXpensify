@@ -18,7 +18,7 @@ public class UserController {
     @Autowired
     private UserService service;
 
-    @GetMapping("/")
+    @GetMapping("/welcome")
     public String welcome() {
         return "Welcome to Xpensify!";
     }
