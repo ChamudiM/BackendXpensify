@@ -18,9 +18,9 @@ public class UserController {
     @Autowired
     private UserService service;
 
-    @GetMapping("/welcome")
+    @GetMapping("/test")
     public String welcome() {
-        return "Welcome to Xpensify!";
+        return "Pipeline working";
     }
 
     @PostMapping("auth/register")
