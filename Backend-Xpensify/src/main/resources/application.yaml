@@ -6,9 +6,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://dpg-cupio8popnds739576rg-a.oregon-postgres.render.com:5432/xpensify_txqh?user=xpensify_txqh_user&password=pkEuGaYhlXxodw3e34cgE5ebkK0vzCgm
-    username:  xpensify_txqh_user
-    password: pkEuGaYhlXxodw3e34cgE5ebkK0vzCgm
+    url: jdbc:postgresql://pg-devops-devops-project.c.aivencloud.com:22851/defaultdb?ssl=require&user=avnadmin&password=AVNS_Ny5uV7dBxlfqgmbRELX
+    username: avnadmin
+    password: AVNS_Ny5uV7dBxlfqgmbRELX
 
   jpa:
     hibernate:
